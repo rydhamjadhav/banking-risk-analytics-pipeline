@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "BankRiskADF"
+		},
+		"BlobLinkService_connectionString": {
+			"value": ""
+		},
+		"SQlLinkedService_password": {
+			"value": ""
+		},
+		"SQlLinkedService_properties_typeProperties_server": {
+			"value": "bankriskserver.database.windows.net"
+		},
+		"SQlLinkedService_properties_typeProperties_database": {
+			"value": "BankRiskDB"
+		},
+		"SQlLinkedService_properties_typeProperties_userName": {
+			"value": "bankproject"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
