@@ -1,0 +1,305 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyLoanData",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": true
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "customer_id",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "customer_id",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "age",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "age",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "gender",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "gender",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "city",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "city",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "employment_type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "employment_type",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "income",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "income",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "loan_amount",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loan_amount",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "loan_tenure_months",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loan_tenure_months",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "interest_rate",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "interest_rate",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 5
+								}
+							},
+							{
+								"source": {
+									"name": "credit_score",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "credit_score",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "existing_loans",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "existing_loans",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "default_history",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "default_history",
+									"type": "Int32",
+									"physicalType": "int"
+								}
+							},
+							{
+								"source": {
+									"name": "collateral_value",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "collateral_value",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "loan_purpose",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loan_purpose",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "loan_date",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loan_date",
+									"type": "Date",
+									"physicalType": "date"
+								}
+							},
+							{
+								"source": {
+									"name": "loan_status",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "loan_status",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"name": "debt_to_income_ratio",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "debt_to_income_ratio",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 4,
+									"precision": 8
+								}
+							},
+							{
+								"source": {
+									"name": "monthly_emi",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "monthly_emi",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 2,
+									"precision": 15
+								}
+							},
+							{
+								"source": {
+									"name": "risk_flag",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "risk_flag",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DataSet_LoanCSV",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DataSet_LoanSQL",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-04-20T03:45:59Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,111 @@
+{
+	"name": "DataSet_LoanSQL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQlLinkedService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "varchar"
+			},
+			{
+				"name": "age",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "gender",
+				"type": "varchar"
+			},
+			{
+				"name": "city",
+				"type": "varchar"
+			},
+			{
+				"name": "employment_type",
+				"type": "varchar"
+			},
+			{
+				"name": "income",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "loan_amount",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "loan_tenure_months",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "interest_rate",
+				"type": "decimal",
+				"precision": 5,
+				"scale": 2
+			},
+			{
+				"name": "credit_score",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "existing_loans",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "default_history",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "collateral_value",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "loan_purpose",
+				"type": "varchar"
+			},
+			{
+				"name": "loan_date",
+				"type": "date"
+			},
+			{
+				"name": "loan_status",
+				"type": "varchar"
+			},
+			{
+				"name": "debt_to_income_ratio",
+				"type": "decimal",
+				"precision": 8,
+				"scale": 4
+			},
+			{
+				"name": "monthly_emi",
+				"type": "decimal",
+				"precision": 15,
+				"scale": 2
+			},
+			{
+				"name": "risk_flag",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "loan_applicants"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

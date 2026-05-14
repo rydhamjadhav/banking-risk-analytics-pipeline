@@ -1,0 +1,15 @@
+{
+	"name": "BankRiskADF",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "ac78a619-9086-478f-b87d-e9ed77616705",
+		"tenantId": "f578744e-0a7e-466d-98fa-65b7fefd823f"
+	}
+}

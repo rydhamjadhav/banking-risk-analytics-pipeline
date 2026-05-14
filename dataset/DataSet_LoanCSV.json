@@ -1,0 +1,105 @@
+{
+	"name": "DataSet_LoanCSV",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "BlobLinkService",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "Loan_CleanData Project.csv",
+				"container": "raw-loan-data"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "customer_id",
+				"type": "String"
+			},
+			{
+				"name": "age",
+				"type": "String"
+			},
+			{
+				"name": "gender",
+				"type": "String"
+			},
+			{
+				"name": "city",
+				"type": "String"
+			},
+			{
+				"name": "employment_type",
+				"type": "String"
+			},
+			{
+				"name": "income",
+				"type": "String"
+			},
+			{
+				"name": "loan_amount",
+				"type": "String"
+			},
+			{
+				"name": "loan_tenure_months",
+				"type": "String"
+			},
+			{
+				"name": "interest_rate",
+				"type": "String"
+			},
+			{
+				"name": "credit_score",
+				"type": "String"
+			},
+			{
+				"name": "existing_loans",
+				"type": "String"
+			},
+			{
+				"name": "default_history",
+				"type": "String"
+			},
+			{
+				"name": "collateral_value",
+				"type": "String"
+			},
+			{
+				"name": "loan_purpose",
+				"type": "String"
+			},
+			{
+				"name": "loan_date",
+				"type": "String"
+			},
+			{
+				"name": "loan_status",
+				"type": "String"
+			},
+			{
+				"name": "Prop_16",
+				"type": "String"
+			},
+			{
+				"name": "debt_to_income_ratio",
+				"type": "String"
+			},
+			{
+				"name": "monthly_EMI",
+				"type": "String"
+			},
+			{
+				"name": "risk flag",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
